@@ -1,0 +1,101 @@
+<router-outlet></router-outlet>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Import Data From Excel</title>
+
+    <!-- Ignite UI Required Combined CSS Files -->
+    </head>
+<body>
+    <div class="col-md-4">     
+        <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+    </div>    
+
+    <div class="w3-container" align="center">
+                <h2>Instructor page</h2>
+         
+
+                              <nav class="navbar navbar-inverse" id="nav1">
+                        <div class="container-fluid">
+                          <div class="navbar-header">
+                            <a class="navbar-brand" href="#" style="color:white;">Give Timings</a>
+                          </div>
+                        
+                          <button class=" pull-right"  type="button" id="b1" (click)="myFunction()"></button>
+                          </div>
+                      </nav> 
+
+
+                    
+
+                    
+                      <div class="w3-card-4 w3-dark-grey" style="width:50%;display:none" id="slot">
+
+
+                  <div class="w3-container w3-center">
+                 
+              
+                    <div class="w3-section">
+
+                        <label>Select Timetable</label>
+                                    <br>
+                                    <br>
+                                <form [formGroup]='dataForm'>
+                                    <input type="file" (change)="onFileSelected($event,dataForm.value)" id="input" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+                                </form>
+                                    <div id="result"></div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div id="slot"></div>
+                                    <form>
+                                       Choose Day: <select name="myvalue" id="val" aria-placeholder="Select Day">
+                                          <option value="-1">Sunday</option>
+                                          <option value="1">Monday</option>
+                                          <option value="2">Tuesday</option>
+                                          <option value="3">Wednesday</option>
+                                          <option value="4">Thursday</option>
+                                          <option value="5">Friday</option>
+                                          <option value="-2">Saturday</option>
+                                        </select>
+                                        </form>
+                                        <br>
+                                        <br>
+
+                                        Duration :  <input type="text"  id="dur"   style="color: black">
+            
+
+                                        <br><br>
+                                      
+                                        <button (click)="Upload()">Submit</button><br><br>                            
+                                    </div>
+                    </div>
+                  </div>
+
+                  <br>
+                  <br>
+                  <br>
+                  
+                  <nav class="navbar navbar-inverse" id="nav2">
+                        <div class="container-fluid">
+                          <div class="navbar-header">
+                            <a class="navbar-brand" href="#" style="color:white;">Give Timings</a>
+                          </div>
+                        
+                          <button class=" pull-right"  type="button" id="b1" onclick="show()">        
+                               </button>
+                            </div>
+                      </nav> 
+
+                  <div class="card" id="view" style="display:none;">
+                        <h2>See Timings</h2>
+                        <p id="timing"></p>
+                        
+                      </div>
+                
+          </div>
+    
+          
+          <table id="grid1"></table>
+
+        </body>
+</html>
